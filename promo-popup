@@ -1,0 +1,14 @@
+
+
+<script>
+$.getScript('https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js', function() {
+  var cookieName = 'notificationClosed';
+  var cookieValue = 'userClosedIt';
+  var cookieExpire = 8;
+  
+  if(typeof Cookies.get(cookieName) !== 'undefined') $('.popup-light_w-yellow').remove();
+  $('.popup-cross-light-yellow').click(function() {
+    Cookies.set(cookieName, cookieValue, { expires: cookieExpire });
+  });
+});
+</script>
